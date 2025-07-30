@@ -11,8 +11,7 @@ from selenium.common.exceptions import NoSuchElementException
 PATH = "C:\Program Files (x86)\chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 count = 0
-#"Travelers", "Walgreens Boots Alliance", "Dow", "3M", "American Express", "Goldman Sachs", "Caterpillar",
-#             "IBM", "Boeing", "Amgen", "Honeywell", "McDonald’s", "Chevron", "Cisco"
+## Some companies you want to scrap the information from 
 companies = ["Salesforce", "Coca-Cola", "Merck & Co.", "Nike", "Intel", "Verizon", "Home Depot", "Disney"
             "Procter & Gamble", "UnitedHealth Group", "Walmart", "Johnson & Johnson", "JPMorgan Chase",
             "Visa", "Microsoft", "Apple"]
@@ -35,9 +34,9 @@ for x in companies:
     sample = [] #creates a temporary list
     sample.append(driver.title) #adds in the title of the page in the first row
     sample.append(numOfResult) #adds in the number of job posting for second column
-    sample.append("Santa Barbara") #hard coded santa barara for third column
-    sample.append("something askdfkdjas lkfa") #hard coded for fourth column
-    #time delay of 7 secs before the enxt request, to not overwhelm the server
+    sample.append("Location") #hard coded Location for third row
+    sample.append("Summary") #hard coded for fourth column
+    #time delay of 7 secs before the next request, to not overwhelm the server
     time.sleep(7)
     sample_df.loc[count] = sample #inserts the row
 
